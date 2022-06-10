@@ -1,0 +1,194 @@
+<!--Adam Gordon CV-->
+<!DOCTYPE html>
+<html>
+<head>
+<!--Don't forget to come back and fill in the meta tags-->  
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Adam Gordon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&family=Orelega+One&family=Padauk&family=Rajdhani:wght@300&family=Righteous&family=Satisfy&family=Secular+One&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/92c9c14542.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Adam Gordon</title>
+  <link rel="icon" type="image/xicon" href="/Images/cogfavicon2.ico">
+
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <a href="index.html"><i class="fa-solid fa-house"></i>&nbsp Home</a>
+      <a href="experience.html"><i class="fa-solid fa-person-chalkboard"></i>&nbsp Experience</a>
+      <a class="active" href="skills.html"><i class="fa-solid fa-screwdriver-wrench"></i>&nbsp Skills</a>
+      <a href="portfolio.html"><i class="fa-solid fa-layer-group"></i>&nbsp Portfolio</a>
+      <a href="getintouch.html"><i class="fa-solid fa-comments"></i>&nbsp Get In Touch</a>
+    </div>
+    <div id=pageHeader>
+      <h1 style="color:white">Adam's Web Works</h1> 
+      <div>
+        <img id=cog1 src="/Images/cog2.svg">
+      </div>
+      <div>
+        <img id=cog2 src="/Images/cog2.svg">
+      </div>
+      <div>
+        <img id=cog3 src="/Images/cog2.svg">
+      </div>
+    </div>
+
+  </header>
+<!--Experiment with Google tools-->
+   <!--Load the AJAX API-->
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+
+     // Load the Visualization API and the corechart package.
+     google.charts.load('current', {'packages':['corechart']});
+
+     // Set a callback to run when the Google Visualization API is loaded.
+     google.charts.setOnLoadCallback(drawChart);
+
+     // Callback that creates and populates a data table,
+     // instantiates the pie chart, passes in the data and
+     // draws it.
+     function drawChart() {
+
+       // Create the data table.
+       var data = new google.visualization.DataTable();
+       data.addColumn('string', 'Topping');
+       data.addColumn('number', 'Slices');
+       data.addRows([
+         ['Mushrooms', 3],
+         ['Onions', 7],
+         ['Olives', 1],
+         ['Zucchini', 1],
+         ['Pepperoni', 2]
+       ]);
+
+       // Set chart options
+       var options = {'title':'How Much Pizza I Ate Last Night',
+                      'width':500,
+                      'height':300};
+
+       // Instantiate and draw our chart, passing in some options.
+       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+       chart.draw(data, options);
+     }
+   </script>
+
+   <!--Further Google Chart Experiments-->
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Inclusion', 20],
+          ['Accessability', 30],
+          ['HTML', 80]
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 5000);
+        setInterval(function() {
+          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+          chart.draw(data, options);
+        }, 26000);
+      }
+    </script>
+<!-- Messing About With Doughnut Charts-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Skill Level',     5],
+      ['Room to develope',   5],
+    ]);
+
+    var options = {
+      title: 'HTML Skill',
+      pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>
+</head>
+
+<body class=pagestyle>
+
+<!-- Messing About With Doughnut Charts-->
+<div id="donutchart" style="width: 100px; height: 100px;"></div>
+
+<!--Doughnut with Canvas and JS-->
+<canvas id="canvas" width=325 height=325></canvas>
+
+
+<!--Div that will hold the pie chart-->
+<div id="chart_div"></div>
+<!--Gague charts-->
+<div id="chart_div" style="width: 400px; height: 120px;"></div>
+
+<!--need to sort this bit out-->
+<div class=pageBodyBlue>
+</div>
+<div class="ContentPanel">
+  <p>Education, technology, and inclusion leader with a broad range of experience across private, 
+  public and charity sectors. Experience of managing projects ranging from setting up and running 
+  a small business, to helping deliver national government funded programmes against a backdrop of 
+  uncertainty and rapid change during the Covid19 outbreak.</p>
+</div>
+
+<br>
+<br>
+<br>
+<footer>
+  <div id="footerbox">
+    <div class="footnavbar">
+      <a href="index.html"><i class="fa-solid fa-house"></i>&nbsp Home</a>
+      <a href="experience.html"><i class="fa-solid fa-puzzle-piece"></i>&nbsp Experience</a>
+      <a href="skills.html"><i class="fa-solid fa-screwdriver-wrench"></i>&nbsp Skills</a>
+      <a href="portfolio.html"><i class="fa-solid fa-layer-group"></i>&nbsp Portfolio</a>
+    </div>
+    <div>
+      <ul class="footerul">
+        <li>Get In Touch</li>
+        <li><i class="fa-solid fa-phone"></i>&nbsp 07857560852</li>
+        <li><i class="fa-solid fa-at"></i> &nbsp adsg1206@gmail.com</li>
+      </ul>      
+    </div>
+    <div>
+      <p id="copyright">&#169 2022 Adam Gordon</p>
+    </div>
+  </div>
+
+</footer>
+</body>
+</html>
